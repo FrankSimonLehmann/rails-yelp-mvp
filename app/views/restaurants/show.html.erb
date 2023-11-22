@@ -1,0 +1,16 @@
+<div class="container">
+<h1><%= @restaurant.name %></h1>
+<p><strong>Address:</strong> <%= @restaurant.address%></p>
+<p><strong>Phone number:</strong> <%=@restaurant.phone_number%></p>
+<p><strong>category:</strong> <%= @restaurant.category%></p>
+<p><strong>Reviews</strong>
+<% @restaurant.reviews.each do |review| %>
+<div class="d-flex">
+<p class= 'mx-3'><strong><%=review.rating %></strong></p>
+<p><%=review.content %></p>
+</div>
+<% end %>
+<%= link_to "back", restaurants_path, class: 'btn btn-primary'%>
+<%# <%= link_to "create review", _path, class: 'btn btn-primary'%>
+
+</div>
